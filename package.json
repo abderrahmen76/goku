@@ -1,0 +1,53 @@
+{
+  "name": "goku",
+  "displayName": "kami_cursor",
+  "description": "Bring your cursor to life with Kami_cursor! This fun and interactive VS Code extension adds dynamic animations to your cursor every time you type. Customize the effects and enjoy a more engaging coding experience!",
+  "version": "0.0.1",
+  "publisher": "chihemek",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Kami Cursor Configuration",
+      "properties": {
+        "kami_cursor.forceBlockCursor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Force block cursor style xhen extension is active."
+        },
+        "kamiCursor.color": {
+          "type": "string",
+          "default": "rgba(255, 255, 255, 0.7)",
+          "description": "Color of the cursor animation."
+        },
+        "kamiCursor.duration": {
+          "type": "number",
+          "default": 500,
+          "description": "Duration of the animation in milliseconds."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "eslint": "^9.13.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
